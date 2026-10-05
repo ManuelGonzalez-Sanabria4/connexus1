@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style3.css">
+    <title>Minijuego Connexus</title>
+</head>
+<body>
+
+        
+        <header class="seccion-header">
+        <img src="Imagenes/minijuego.png" alt="Logo Connexus" class="logo">
+        <img src="Imagenes/linea blanca.png" alt="" class="logo">
+        <p class="subtitulo">Completa el siguiente memotest para desbloquear el acceso a la página web</p>
+        <div class="grid-container" id="memotest">
+            
+        </div>
+        <div class="desbloqueo">
+
+    
+
+    <input
+        type="text"
+        id="input-contrasena"
+        placeholder="contraseña"
+        disabled
+    >
+
+    <img
+        src="Imagenes/lineapunteada.png"
+        alt=""
+        class="logo"
+    >
+
+    <button
+        id="boton-desbloquear"
+        class="btn-forma-organica"
+        disabled
+    >
+        Desbloquear
+    </button>
+    
+
+</div>
+    </header>
+
+    <!-- 2. DESARROLLO (Fondo verde) -->
+    <!-- <main class="seccion-verde" id="quienes-somos">
+        <img src="Imagenes/titulo quienes somos.png" alt="¿Quienes Somos?" class="titulo-imagen">
+        <img src="Imagenes/linea.png" alt="" class="linea">
+        
+        <p>Mil años en el futuro surge el universo de Connexus, un ecosistema inteligente y vivo que necesita alimentarse de la energía emocional humana para sobrevivir y a cambio de esta ofrenda cruda, la red provee recursos vitales a la comunidad.</p>
+        <p>En este nuevo universo, la humanidad no solo se adaptó a su entorno, sino que se fusionó con él, creando una profunda interdependencia simbiótica. La brecha que antes separaba a las personas de la naturaleza desapareció. También sentimos de manera directa las emociones de quienes nos rodean, del mismo modo que ellos pueden percibir las nuestras. En Connexus vivimos en una red viva y consciente donde cada pensamiento, sentimiento y latido resuena en comunidad.</p>
+        <p>Esta profunda sensibilidad transformó nuestra relación con el planeta en un ciclo de reciprocidad energética. Todo lo que tomamos de la Tierra nos comprometemos a devolverlo.</p>
+
+        <img src="imagenes/imagen para quienes somos.png" alt="Pieza material Connexus" class="imagen-contenido">
+    </main> -->
+
+    <!-- 3. INVITACIÓN (Segundo azul con papel rasgado) -->
+     <section class="seccion-azul-invitacion" id="invitacion"> 
+        <!-- Acá va el PNG de tu tarjeta de invitación con fondo transparente, 
+             para que se vea el fondo azul que le vamos a poner a la sección -->
+        <!-- <img src="imagenes/invitacion.png" alt="Invitación al Paseo del Bosque" class="imagen-invitacion"> -->
+    </section>
+
+    <!-- 4. FOOTER (Fondo crema liso) -->
+     <footer class="seccion-footer">
+        <!-- <p>Para saber más sobre Connexus seguinos en nuestros Instagram:</p>
+        <p>@connexus.tdm3<br>@somos.connexus</p> -->
+    </footer> 
+     <!-- =========================================
+         POPUP DE CONTRASEÑA
+         ========================================= -->
+
+    <div
+        class="popup-contrasena"
+        id="popup-contrasena"
+    >
+
+        <div class="popup-contenido">
+
+            <h2>¡Ganaste!</h2>
+
+            <p>
+                La contraseña para desbloquear la página es:
+            </p>
+
+            <p
+                class="contrasena-mostrada"
+                id="contrasena-mostrada"
+            >
+                CONNEXUS
+            </p>
+
+            <button
+                id="boton-copiar"
+                class="boton-popup"
+            >
+                Copiar contraseña
+            </button>
+
+            <button
+                id="boton-cerrar-popup"
+                class="boton-popup"
+            >
+                Cerrar
+            </button>
+
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

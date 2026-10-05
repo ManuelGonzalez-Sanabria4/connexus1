@@ -1,0 +1,391 @@
+/* =========================================
+   TABLERO
+   ========================================= */
+
+.grid-container {
+    display: grid;
+
+    justify-content: center;
+
+    gap: 16px;
+
+    grid-template-columns:
+        repeat(5, 50px);
+
+    grid-template-rows:
+        repeat(2, 75px);
+
+    margin: 3%;
+}
+
+
+/* =========================================
+   TARJETA
+   ========================================= */
+
+.tarjeta {
+
+    width: 50px;
+
+    height: 75px;
+
+    cursor: pointer;
+
+    perspective: 800px;
+
+    touch-action: manipulation;
+}
+
+
+/* =========================================
+   INTERIOR DE LA TARJETA
+   ========================================= */
+
+.tarjeta-inner {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    transform-style: preserve-3d;
+
+    /*
+     * Giro ligeramente más rápido
+     * y con una aceleración más suave.
+     */
+
+    transition:
+        transform 0.5s
+        cubic-bezier(
+            0.22,
+            0.61,
+            0.36,
+            1
+        );
+}
+
+
+/* =========================================
+   TARJETA GIRADA
+   ========================================= */
+
+.tarjeta.girada .tarjeta-inner {
+
+    transform:
+        rotateY(180deg);
+}
+
+
+/* =========================================
+   CARAS
+   ========================================= */
+
+.cara {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    top: 0;
+
+    left: 0;
+
+    backface-visibility: hidden;
+
+    -webkit-backface-visibility: hidden;
+}
+
+
+/* =========================================
+   IMÁGENES
+   ========================================= */
+
+.cara img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================================
+   FRENTE
+   ========================================= */
+
+.cara.frente {
+
+    transform:
+        rotateY(180deg);
+}
+
+
+/* =========================================
+   CARTA ENCONTRADA
+   ========================================= */
+
+.tarjeta.encontrada {
+
+    cursor: default;
+}
+
+
+/* =========================================
+   ANIMACIÓN DE PAREJA ENCONTRADA
+   ========================================= */
+
+@keyframes parejaEncontrada {
+
+    0% {
+
+        transform:
+            scale(1);
+    }
+
+    50% {
+
+        transform:
+            scale(1.08);
+    }
+
+    100% {
+
+        transform:
+            scale(1);
+    }
+}
+
+
+.tarjeta.pareja-encontrada {
+
+    animation:
+        parejaEncontrada
+        0.35s
+        ease-out;
+}
+
+
+/* =========================================
+   ANIMACIÓN DE ERROR
+   ========================================= */
+
+@keyframes errorTarjeta {
+
+    0% {
+
+        transform:
+            translateX(0);
+    }
+
+    20% {
+
+        transform:
+            translateX(-4px);
+    }
+
+    40% {
+
+        transform:
+            translateX(4px);
+    }
+
+    60% {
+
+        transform:
+            translateX(-3px);
+    }
+
+    80% {
+
+        transform:
+            translateX(3px);
+    }
+
+    100% {
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+.tarjeta.error {
+
+    animation:
+        errorTarjeta
+        0.3s
+        ease-in-out;
+}
+
+/* =========================================
+   DESBLOQUEO
+   ========================================= */
+
+#input-contrasena:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+#boton-desbloquear:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+#input-contrasena {
+    width: 180px;
+    height: 35px;
+
+    padding: 5px 10px;
+
+    border: none;
+    outline: none;
+
+    font-family: 'Josefin Sans', sans-serif;
+
+    text-align: center;
+}
+
+/* =========================================
+   POPUP
+   ========================================= */
+
+.popup-contrasena {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+    /*
+     Lo ponemos por encima
+     de absolutamente todo.
+    */
+
+    z-index: 1000;
+
+    /*
+     Fondo oscuro muy transparente.
+    */
+
+    background: rgba(0, 0, 0, 0.25);
+
+    /*
+     Centra el contenido.
+    */
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+}
+
+
+/* =========================================
+   POPUP VISIBLE
+   ========================================= */
+
+.popup-contrasena.visible {
+
+    display: flex;
+
+}
+
+
+/* =========================================
+   CONTENIDO DEL POPUP
+   ========================================= */
+
+.popup-contenido {
+
+    position: relative;
+
+    margin-top: 130px;
+
+    width: 95%;
+    max-width: 350px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background: #031d5e;
+
+    color: white;
+
+    border-radius: 10px;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================
+   CONTRASEÑA
+   ========================================= */
+
+.contrasena-mostrada {
+
+    margin: 20px 0;
+
+    font-size: 24px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =========================================
+   BOTONES DEL POPUP
+   ========================================= */
+
+.boton-popup {
+
+    display: block;
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    font-family: 'Josefin Sans', sans-serif;
+
+    cursor: pointer;
+
+    touch-action: manipulation;
+
+}
+
+/* =========================================
+   TRANSICIÓN ENTRE PÁGINAS
+   ========================================= */
+
+body {
+    opacity: 1;
+    transition: opacity 0.6s ease;
+}
+
+
+/* Página desapareciendo */
+
+body.fade-out {
+    opacity: 0;
+}
