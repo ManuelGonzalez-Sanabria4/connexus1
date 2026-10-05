@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap');
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #0b1a30; 
+    overflow: hidden; 
+}
+
+/* --- INICIO --- */
+.pantalla-inicio {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-image: url('Imagenes/fondo\ de\ inicio.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* --- INICIO: Título más grande --- */
+.logo {
+    width: 100%;
+    max-width: 420px; /* Aumentamos el tamaño máximo del logo de Connexus */
+    margin-bottom: 5px;
+}
+
+/* Reducimos el espacio entre el subtítulo y los botones */
+.subtitulo {
+    font-size: 22px; 
+    font-weight: 600;
+    margin-bottom: 15px; /* Antes estaba en 30px, esto acerca los botones hacia arriba */
+    padding: 0 20px;
+}
+
+/* --- INICIO: Botones más juntos --- */
+.contenedor-botones {
+    display: flex;
+    flex-direction: column;
+    gap: 0px; /* Sacamos el espacio extra para que queden bien pegados */
+}
+
+/* --- BOTONES DEL INICIO SÚPER ALTOS --- */
+.btn-forma-organica {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 300px; /* Más anchos */
+    height: 150px; /* ALTURA EXTREMA para que queden bien gruesos */
+    
+    background-image: url('Imagenes/boton.png');
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    
+    color: #0b1a30;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700; 
+    font-size: 22px; /* Letras más grandes */
+    cursor: pointer;
+}
+
+/* --- TELÓN AZUL (Fondo que tapa el inicio al abrir popup) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* Usamos el azul oscuro (#0b1a30) con un 92% de opacidad, chao negro */
+    background-color: rgba(11, 26, 48, 0.92); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.activo {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* --- TARJETAS (MODALES) --- */
+.modal-contenido {
+    width: 90%;
+    max-width: 420px;
+    height: 94vh; 
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Reduje el padding de 25px a 15px para ganar espacio arriba y abajo */
+    padding: 15px 15px; 
+    overflow: hidden; 
+}
+
+/* FONDO VERDE (Quiénes Somos) */
+.fondo-verde {
+    background-color: #8ed081; /* Verde base vibrante para que no se apague */
+    background-image: url('Imagenes/fondo\ hojas.png');
+    background-size: cover;
+    background-position: center;
+    color: #0b1a30;
+    justify-content: space-between; 
+    
+    /* BRILLO ALREDEDOR DEL POPUP */
+    box-shadow: 0px 0px 30px rgba(100, 255, 100, 0.5); 
+}
+
+/* Título más grande */
+.titulo-imagen {
+    width: 260px; 
+    margin: 0 auto 15px auto; 
+}
+
+/* --- QUIÉNES SOMOS: Ajuste para la línea --- */
+.titulo-imagen {
+    width: 200px; 
+    margin: 0 auto 5px auto; /* Reducimos el margen inferior porque ahora va la línea */
+}
+
+.textos-quienes {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Casi nada de espacio extra entre párrafos */
+    width: 100%;
+}
+
+.textos-quienes p {
+    /* Achicamos la letra a 13px para garantizar que entren los 3 párrafos */
+    font-size: 13px; 
+    line-height: 1.25;
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.imagen-pieza {
+    width:80%;
+    height: auto;
+    /* Limitamos la foto a solo el 15% del alto de la pantalla */
+    max-height: 100vh; 
+    object-fit: cover;
+    border-radius: 12px;
+    /* El margin: auto empuja el botón hacia abajo sin desbordarlo */
+    margin: auto 0; 
+    margin-top: 20px;
+}
+
+/* INVITACIÓN: Caja transparente para que el popup sea solo la estampilla */
+.fondo-azul {
+    background: transparent; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 0; 
+    height: auto; 
+    box-shadow: none; /* Quitamos la caja porque la estampilla brilla sola */
+}
+
+/* --- INVITACIÓN AGRANDADA --- */
+.imagen-invitacion {
+    width: 100%;
+    height: auto;
+    max-height: 85vh; 
+    object-fit: contain;
+    margin: auto;
+}
+
+/* --- BOTÓN SALIR: MÁS GRANDE --- */
+.btn-salir {
+    appearance: none; 
+    -webkit-appearance: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 160px; /* Botón salir más ancho */
+    height: 100px; /* Botón salir más alto */
+    
+    background-image: url('Imagenes/boton\ salir.png'); 
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 19px; 
+    cursor: pointer;
+    
+    margin: 0 auto; 
+    flex-shrink: 0; 
+}
+
+/* La nueva clase para la línea separadora */
+.linea {
+    width: 90%; 
+    height: auto;
+    margin: 0 auto 10px auto; /* Le da un respiro antes de que empiecen los textos */
+    display: block;
+}
