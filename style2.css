@@ -54,8 +54,10 @@ body {
      /* display: flex; justify-content: center; align-items: center;  */
     width: 200px; height: 60px; margin: 10px 0;
     background-image: url('Imagenes/boton.png');
-    background-size: contain; background-repeat: no-repeat; background-position: center;
+    background-size: 100% 100%; background-repeat: no-repeat; background-position: center;
+    background-color: transparent;
     color: #0b1a30; text-decoration: none; font-weight: 600; font-size: 14px;
+    border: none;
 }
 
 

@@ -30,7 +30,7 @@ body {
 
 /* --- INICIO: Título más grande --- */
 .logo {
-    width: 100%;
+    width: 110%;
     max-width: 420px; /* Aumentamos el tamaño máximo del logo de Connexus */
     margin-bottom: 5px;
 }
@@ -57,7 +57,7 @@ body {
     align-items: center;
     
     width: 300px; /* Más anchos */
-    height: 150px; /* ALTURA EXTREMA para que queden bien gruesos */
+    height: 125px; /* ALTURA EXTREMA para que queden bien gruesos */
     
     background-image: url('Imagenes/boton.png');
     background-size: 100% 100%; 
@@ -66,7 +66,7 @@ body {
     background-color: transparent;
     border: none;
     
-    color: #0b1a30;
+    color: #031D5E;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 700; 
     font-size: 22px; /* Letras más grandes */
@@ -98,29 +98,31 @@ body {
 
 /* --- TARJETAS (MODALES) --- */
 .modal-contenido {
-    width: 90%;
-    max-width: 420px;
+    position: relative;
+    width: 100%;
+    max-width: 440px;
     height: 94vh; 
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     /* Reduje el padding de 25px a 15px para ganar espacio arriba y abajo */
-    padding: 15px 15px; 
+    /* padding: 15px 15px;  */
     overflow: hidden; 
 }
 
 /* FONDO VERDE (Quiénes Somos) */
 .fondo-verde {
-    background-color: #8ed081; /* Verde base vibrante para que no se apague */
-    background-image: url('Imagenes/fondo\ hojas.png');
-    background-size: cover;
+    /*background-color: #8ed081; /* Verde base vibrante para que no se apague */
+    background-repeat: no-repeat;
+    background-image: url('Imagenes/Frame\ 7\ \(1\).png');
+    background-size: 100% 100%;
     background-position: center;
     color: #0b1a30;
-    justify-content: space-between; 
+    /* justify-content: space-between;  */
     
     /* BRILLO ALREDEDOR DEL POPUP */
-    box-shadow: 0px 0px 30px rgba(100, 255, 100, 0.5); 
+    /* box-shadow: 0px 0px 30px rgba(100, 255, 100, 0.5);  */
 }
 
 /* Título más grande */
@@ -131,7 +133,8 @@ body {
 
 /* --- QUIÉNES SOMOS: Ajuste para la línea --- */
 .titulo-imagen {
-    width: 200px; 
+    padding-top: 85px;
+    width: 180px; 
     margin: 0 auto 5px auto; /* Reducimos el margen inferior porque ahora va la línea */
 }
 
@@ -147,22 +150,21 @@ body {
     font-size: 13px; 
     line-height: 1.25;
     text-align: left;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 4px;
     font-weight: 500;
 }
 
 .imagen-pieza {
-    width:80%;
+    width:30%;
     height: auto;
     /* Limitamos la foto a solo el 15% del alto de la pantalla */
     max-height: 100vh; 
     object-fit: cover;
     border-radius: 12px;
     /* El margin: auto empuja el botón hacia abajo sin desbordarlo */
-    margin: auto 0; 
-    margin-top: 20px;
+    margin-top: 2px; 
 }
 
 /* INVITACIÓN: Caja transparente para que el popup sea solo la estampilla */
@@ -179,7 +181,7 @@ body {
 .imagen-invitacion {
     width: 100%;
     height: auto;
-    max-height: 85vh; 
+    max-height: 95vh; 
     object-fit: contain;
     margin: auto;
 }
@@ -210,12 +212,47 @@ body {
     
     margin: 0 auto; 
     flex-shrink: 0; 
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btn-salir2 {
+    appearance: none; 
+    -webkit-appearance: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 160px; /* Botón salir más ancho */
+    height: 100px; /* Botón salir más alto */
+    
+    background-image: url('Imagenes/boton\ salir.png'); 
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 19px; 
+    cursor: pointer;
+    
+    margin: 0 auto; 
+    flex-shrink: 0; 
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* La nueva clase para la línea separadora */
 .linea {
-    width: 90%; 
+    width: 67%; 
     height: auto;
-    margin: 0 auto 10px auto; /* Le da un respiro antes de que empiecen los textos */
+    margin: 0 auto 8px auto; /* Le da un respiro antes de que empiecen los textos */
     display: block;
 }
