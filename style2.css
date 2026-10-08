@@ -32,7 +32,7 @@ body {
 /* 1. HEADER */
 .seccion-header {
 
-    margin-top: -90px;
+    margin-top: -120px;
     display: flex;
     flex-direction: column;
     align-items: center;
